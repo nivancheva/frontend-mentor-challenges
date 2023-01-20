@@ -1,0 +1,118 @@
+:root {
+    --clr-primary-bright-orange: hsl(31, 77%, 52%);
+    --clr-primary-dark-cyan: hsl(184, 100%, 22%);
+    --clr-primary-very-dark-cyan: hsl(179, 100%, 13%);
+    --clr-neutral-transperent-white: hsla(0, 0%, 100%, 0.75);
+    --clr-neutral-very-light-gray: hsl(0, 0%, 95%);
+}
+
+body {
+    background: var(--clr-neutral-very-light-gray);
+    font-size: 15px;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: var(--clr-neutral-very-light-gray);
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.card__one {
+    background: var(--clr-primary-bright-orange);
+}
+
+.card__two {
+    background: var(--clr-primary-dark-cyan);
+}
+
+.card__three {
+    background: var(--clr-primary-very-dark-cyan);
+}
+
+h2 {
+    font-family: 'Big Shoulders Display', cursive;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+p {
+    color: var(--clr-neutral-transperent-white);
+}
+
+.button {
+    padding: .75rem 2rem;
+    text-align: center;
+    background: white;
+    border-radius: 30px;
+    width: fit-content;
+    box-sizing: border-box;
+    border: 2px solid white;
+}
+
+.button:hover {
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.button__one {
+    color: var(--clr-primary-bright-orange);
+}
+
+
+
+.button__two {
+    color: var(--clr-primary-dark-cyan);
+}
+
+.button__three {
+    color: var(--clr-primary-very-dark-cyan);
+}
+
+ .attribution { 
+    position: absolute;
+    bottom: 2rem;
+    font-size: 11px; text-align: center;
+    color: black;
+ }
+
+ .attribution a { color: hsl(228, 45%, 44%); }
+
+ @media only screen and (max-width: 950px) {
+    body {
+        padding: 1rem 0 6rem;
+        position: relative;
+        height: unset;
+    }
+
+    .container{
+        flex-direction: column;
+        max-width: 350px;
+    }
+    .card {
+        gap: .75rem;
+    }
+
+    .button {
+        padding: 1rem 2rem;
+    }
+ }
