@@ -1,0 +1,154 @@
+:root {
+    --clr-soft-blue: hsl(215, 51%, 70%);
+    --clr-cyan: hsl(178, 100%, 50%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-dark-blue-main: hsl(217, 54%, 11%);
+    --clr-dark-blue-card: hsl(216, 50%, 16%);
+    --clr-dark-blue-line: hsl(215, 32%, 27%);
+
+    --ff: 'Outfit', sans-serif;
+
+    --fw-normal: 300;
+    --fw-bold: 400;
+    --fw-extra-bold: 600; 
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+body {
+    font-family: var(--ff);
+    font-weight: var(--fw-normal);
+    font-size: 18px;
+    color:var(--clr-soft-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-dark-blue-main);
+}
+
+.card {
+    background-color: var(--clr-dark-blue-card);
+    padding: 1.5em;
+    width: 350px;
+    border-radius: 1em;
+}
+
+.picture {
+    border-radius: .5em;
+    margin-bottom: 1.5em;
+}
+
+.picture:hover {
+    cursor: pointer;
+}
+
+.card__title {
+    color: var(--clr-white);
+    margin-bottom: .5em;
+}
+
+.card__title:hover {
+    cursor: pointer;
+    color: var(--clr-cyan);
+}
+
+.flex-group {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+}
+
+.author__info {
+    display:flex;
+    position: relative;
+}
+
+.author__info::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border: 1px solid var(--clr-dark-blue-line);
+    left: 0;
+    right: 0;
+    bottom: 40px;
+}
+
+.author__pic {
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--clr-white);
+}
+
+.author {
+    margin: 0 1em ;
+}
+
+.author span {
+    color: var(--clr-white);
+}
+
+.author span:hover {
+    cursor: pointer;
+    color: var(--clr-cyan);
+}
+
+.ethereum, .clock { 
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.ethereum__text {
+    color: var(--clr-cyan)
+}
