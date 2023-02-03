@@ -90,17 +90,23 @@ body {
     position: relative;
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-}
-
-.overlay:hover {
+.picture:hover::before {
+  content: '';
   background-color: var(--clr-cyan);
   opacity: 0.4;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.picture:hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background-image: url('images/icon-view.svg');
   background-repeat: no-repeat;
   background-position: center;
+  z-index: 2;
 }
 
 .picture:hover {
