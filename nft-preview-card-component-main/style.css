@@ -87,6 +87,17 @@ body {
 .picture {
     border-radius: .5em;
     margin-bottom: 1.5em;
+    position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.overlay:hover {
+  background-color: var(--clr-cyan);
+  opacity: 0.4;
 }
 
 .picture:hover {
