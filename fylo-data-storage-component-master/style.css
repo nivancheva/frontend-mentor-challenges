@@ -1,0 +1,234 @@
+:root {
+    --clr-pale: hsl(243, 100%, 93%);
+    --clr-grayish: hsl(229, 7%, 55%);
+    --clr-dark: hsl(228, 56%, 26%);
+    --clr-very-dark: hsl(229, 57%, 11%);
+    --clr-start-gradient: hsl(6, 100%, 80%);
+    --clr-end-gradient: hsl(335, 100%, 65%);
+
+    --ff-main: 'Raleway', sans-serif;
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    --fz: 0.875rem;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+body {
+    font-family: var(--ff-main);
+    font-size: var(--fz);
+    font-weight: var(--fw-regular);
+
+    background-color: var(--clr-very-dark);
+    background-image: url(images/bg-mobile.png);
+    
+    background-repeat: no-repeat;
+    color: var(--clr-pale);
+
+    display: grid;
+    place-content: center;
+}
+
+.icon__container {
+    background-color: var(--clr-dark);
+    border-radius: .5em;
+    border-top-right-radius: 5em;
+
+    padding: 2em;
+}
+
+.flex-group {
+    display: flex;
+    gap: 1em;
+    padding-top: 2em;
+}
+
+.flex-group img {
+    padding: 0.5em;
+    background-color: var(--clr-very-dark);
+    border-radius: .5em;
+}
+
+.storage {
+    background-color: var(--clr-dark);
+    border-radius: .5em;
+
+    align-self: end;
+    padding: 2em;
+
+    position: relative;
+}
+
+.used__storage span {
+    color: white;
+    font-weight: var(--fw-bold);
+}
+
+.gb__left {
+    color: var(--clr-grayish);
+    background-color: white;
+    padding: 1em;
+    border-radius: .5em;
+
+    position: absolute;  
+}
+
+.gb__left span {
+    color: black;
+    font-weight: var(--fw-bold);
+}
+
+.data {
+    background-color: var(--clr-very-dark);
+    width: 100%;
+    height: 1em;
+    border-radius: .5em;
+    position: relative;
+
+    margin: 1em 0 .75em;
+}
+
+.data-gradient {
+    width: 75%;
+    position: absolute;
+    inset: 2px;
+    background-image: linear-gradient(to right, var(--clr-start-gradient) , var(--clr-end-gradient));
+    border-radius: .5em;
+}
+
+.data-gradient::after {
+    content:'';
+    display: block;
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: white;
+    right: 0;
+    inset-inline-end: px;
+}
+
+.gb-flex {
+    display: flex;
+    justify-content: space-between;
+
+    color: white;
+    font-weight: var(--fw-bold);
+}
+
+@media (min-width:800px) {
+    body {
+        background-image: url(images/bg-desktop.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 100% auto;
+    }
+
+    .wraper {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 2em;
+    }
+
+    .icon__container {
+        padding-right: 7em;
+    }
+
+    .gb__left {
+        top: -2em;
+        right:2em;  
+    }
+
+    .gb__left::after {
+        --arrow-size: 12px;
+        content: '';
+        position: absolute;
+        width: 0; 
+        height: 0; 
+        right: 0;
+        bottom: calc(var(--arrow-size)*-1);
+        border-top: var(--arrow-size) solid transparent;
+        border-bottom: var(--arrow-size) solid transparent; 
+        
+        border-right:var(--arrow-size) solid white; 
+    }
+}
+
+@media (max-width:800px) {
+    body {
+        background-size: cover;
+    }
+
+    .gb__left {
+        bottom: 0;
+        left:50%;
+        transform: translate(-50%, 50%);
+    }
+    
+    .storage {
+        margin-top: 2em;
+        text-align: center;
+    }
+}
+
+.attribution { 
+    font-size: 11px; 
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+ }
+.attribution a { color: hsl(228, 45%, 44%); }
