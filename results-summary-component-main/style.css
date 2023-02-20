@@ -14,13 +14,18 @@
     --clr-circle-strat: hsla(256, 72%, 46%, 1);
     --clr-circle-end: hsla(241, 72%, 46%, 0);
 
-    --ff: 'Hanken Grotesk', sans-serif;
+    --ff: 'MyWebFont', sans-serif;
 
     --fw-regular: 500;
     --fw-medium: 700;
     --fw-bold: 800;
 
     --fz-main: 1.125rem;
+}
+
+@font-face {
+    font-family: 'MyWebFont';
+    src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
 }
 
 /*
