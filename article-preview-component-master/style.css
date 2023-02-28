@@ -90,7 +90,8 @@ body {
 }
 
 .card__info {
-    padding: 2.5em;
+    padding: 2.5em 2.5em 1.5em 2.5em;
+    position: relative;
 }
 
 .card__info h2 {
@@ -146,20 +147,29 @@ p {
     background-color: var(--clr-dark);
     color: var(--clr-grayish);
 
-    padding: 1.5em;
+    padding: 1.5em 2.5em;
 
     display: flex;
     justify-content: space-between;
+
+    position: absolute;
 }
 
 .links {
     display: flex;
     align-items: center;
+    gap: 1.25em;
+}
+
+.links a {
+    display: inline-block;
+    width: 20px;
 }
 
 .social_media h3 {
     text-transform: uppercase;
-    letter-spacing: .25em;
+    letter-spacing: .5em;
+    font-weight: var(--fw-regular);
 }
 
 ul {
@@ -167,6 +177,7 @@ ul {
     display: flex;
     align-items: center;
     gap: 1em;
+    padding: 0;
 }
 
 .icon-share {
@@ -194,26 +205,36 @@ ul {
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+@media (max-width:600px) {
+    .social_media {
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
 
 @media (min-width:600px) {
-
-    body {
-
-    }
 
    .card {
     display: grid;
     grid-template-columns: 2fr 3fr;
+    overflow: visible;
    }
 
    .drawers {
     height: 100%;
     object-position: left;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
    }
 
    .card__info h2 {
        font-size: 1.375rem;
        line-height: 1.3;
+   }
+
+   .share__wrapper {
+    position: relative;
    }
    
    .share {
@@ -222,12 +243,10 @@ ul {
    }
 
     .social_media {
-        position: absolute;
         border-radius: 10px;
-    }
-
-    .icon {
-        width: 35px;
+        bottom: 150%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .social_media ul {
