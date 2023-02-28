@@ -1,18 +1,33 @@
+const tooltip = document.getElementById("social_media");
+const showButton = document.getElementById("show_tooltip");
+const hideButton = document.getElementById("hide_tooltip");
+
 function setDisplay(display) {
-    document.getElementById("social_media").style.display = display;
+    tooltip.style.display = display;
 }
 
-document.getElementById("show_tooltip").addEventListener("click", function(e) {
-    if (document.getElementById("show_tooltip").classList.contains('clicked')) {
-        setDisplay("none");
-        document.getElementById("show_tooltip").classList.remove("clicked");
+function unclickbutton() {
+    setDisplay("none");
+    showButton.classList.remove("clicked");
+}
+
+function clickbutton() {
+    setDisplay("flex");
+    showButton.classList.add("clicked");
+}
+
+function isbuttonclicked() {
+    return showButton.classList.contains('clicked');
+}
+
+showButton.addEventListener("click", function(e) {
+    if (isbuttonclicked()) {
+        unclickbutton();
     } else {
-        setDisplay("flex");
-        document.getElementById("show_tooltip").classList.add("clicked");
+        clickbutton();
     }
 });
 
-document.getElementById("hide_tooltip").addEventListener("click", function(e) {
-    setDisplay("none");
-    document.getElementById("show_tooltip").classList.remove("clicked");
+hideButton.addEventListener("click", function(e) {
+    unclickbutton();
 });
