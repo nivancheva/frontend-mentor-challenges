@@ -1,0 +1,411 @@
+:root {
+    --clr-primery-dark-blue: hsl(243, 87%, 12%);
+    --clr-primery-blue: hsl(238, 22%, 44%);
+    --clr-accent-blue: hsl(224, 93%, 58%);
+    --clr-accent-cyan: hsl(170, 45%, 43%);
+    --clr-neutral-blue: hsl(240, 75%, 98%);
+    --clr-neutral-gray: hsl(0, 0%, 75%);
+
+    --ff-main: 'Open Sans', sans-serif;
+    --ff-acent:  'Raleway', sans-serif;
+
+    --fw-main: 400;
+    --fw-accent-bold: 700;
+
+    --fz-main: 1rem;
+    --fz-desctop: 1.125rem;
+    --fz-small: .75rem;
+}
+
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
+margin: 0;
+}
+/*
+3. Allow percentage-based heights in the application
+*/
+html, body {
+height: 100%;
+}
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+}
+/*
+6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+/*
+7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+font: inherit;
+}
+/*
+8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+/*
+9. Create a root stacking context
+*/
+#root, #__next {
+isolation: isolate;
+}
+
+body {
+    font-family: var(--ff-main);
+    font-size: var(--fz-main);
+    font-weight: var(--ff-main);
+}
+
+.all {
+    max-width: 1440px;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: space-evenly;
+    margin: 3em 2em 10em;
+}
+
+.logo {
+    width: 70%;
+    max-width: 300px;
+}
+
+.nav-bar {
+    list-style-type: none;
+    display: flex;
+    gap:1em;
+    align-items: center;
+}
+
+.option a{
+    text-decoration: none;
+    color: black;
+    font-size: var(--fz-small);
+}
+
+.card__start {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    margin: 0 2em 4em;
+}
+
+.card__start p {
+    margin: 1.5em 0;
+}
+
+input,
+button {
+    display:block;
+    width: 100%;
+    padding: .374em 0;
+    border-radius: 5px;  
+    box-shadow: 2px 2px 5px 10px var(--clr-neutral-grey);
+}
+
+::placeholder {
+    padding-left: 1em;
+    color:var(--clr-neutral-gray);
+}
+
+button {
+    color: white;
+    background-color: var(--clr-accent-blue);
+    border: none;
+    margin-top: 1em;
+}
+
+.backround-image {
+    background-image: url(images/bg-curve-mobile.svg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 35px;
+}
+
+
+.card__benefits {
+    background-color: var(--clr-neutral-blue);
+    padding: 0 2em 4em;
+}
+
+.card__benefits h2 {
+    text-align: center;
+}
+
+.space {
+    margin: 2em 0;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:.5em;
+
+    position: relative;
+
+    margin: 2em 0;
+}
+
+.link::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 65px;
+    right: 65px;
+    height: 2px;
+    background-color: var(--clr-accent-cyan);
+}
+
+.link__text {
+    text-decoration: none;
+    color: var(--clr-accent-cyan);
+}
+
+.card__person {
+    font-size: var(--fz-small);
+    background-color: white;
+    padding: 2em;
+}
+
+.person {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1em;
+}
+
+.card__person p {
+    margin: 1em 0 2em 0;
+}
+
+.person-pic {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.card__signup {
+    text-align: center;
+    background-color: var(--clr-primery-blue);
+    color: white;
+    font-size: var(--fz-small);
+    padding: 3em;
+}
+
+footer {
+    background-color: var(--clr-primery-dark-blue);
+    color: white;
+    padding: 4em 2em 2em;
+    line-height: 2;
+
+    display: grid;
+    gap: 2em
+}
+
+.icon-white {
+    background-image: url(images/logo.svg);
+    display: inline-block;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 50px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(2%) hue-rotate(346deg) brightness(101%) contrast(100%);
+}
+
+.contact {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+}
+
+ul {
+    padding: 0;
+}
+
+.links_ul {
+    list-style-type: none;
+}
+
+.links_ul a {
+    text-decoration: none;
+    color: white;
+}
+
+.links_ul a:hover {
+    color: var(--clr-accent-blue);
+}
+
+.links__social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+
+    list-style-type: none;
+}
+
+.links__social-media i {
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 4px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+i:hover {
+    cursor: pointer;
+    color: var(--clr-accent-blue);
+    border: 1px solid var(--clr-accent-blue);
+}
+
+.attribution {
+    font-size: .5625rem;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 1000px) {
+
+    body {
+        font-size: var(--fz-desctop);
+
+        display: grid;
+        place-items: center;
+    }
+
+    .option a {
+        font-size: var(--fz-main);
+    }
+
+    .card__start {
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 3em;
+        padding: 4em 3em 3em;
+
+        text-align: left;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 1em;
+    }
+
+    .backround-image {
+        background-image: url(images/bg-curve-desktop.svg);
+        background-repeat: no-repeat;
+    }
+
+    .card__benefits {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap:3em;
+        padding: 4em 3em 3em;
+    }
+
+    .card__benefits h2 {
+        text-align: left;
+    }
+
+    .link {
+        justify-content: flex-start;
+    }
+
+    .link::after {
+        left: 0;
+    }
+
+    .card__person {
+        font-size: var(--ff-main);
+        width: 70%;
+    }
+
+    .card__signup {
+        padding: 5em 5em 3em 3em;
+        font-size: var(--ff-main);
+        text-align: left;
+
+        display: flex;
+        justify-content: space-between;
+        gap: 10em;
+        align-items: center;
+    }
+
+    .signup__text {
+        max-width: 50%;
+    }
+
+    .btn_sign {
+        width: 100%;
+    }
+
+    .btn_sign button {
+        width: 35%;
+    }
+
+    footer {
+        line-height: 3;
+        padding: 4em 3em 3em;
+    }
+
+    .all__links {
+        display: flex;
+        align-items: center;
+        align-items: start;
+        gap: 10em;
+    }
+
+    .links {
+        flex-direction: row;
+        gap: 10em;
+
+    }
+
+    .attribution {
+        font-size: 1rem;
+    }
+
+    
+}
+
+
