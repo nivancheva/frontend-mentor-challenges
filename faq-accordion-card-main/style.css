@@ -79,6 +79,10 @@ body {
     place-items: center;
 }
 
+.wraper {
+    width: 80%;
+}
+
 .card {
     background-color: white;
     margin: 10em 2em;
@@ -132,6 +136,10 @@ h1 {
     padding: 0;
 }
 
+.arrow:hover {
+    cursor: pointer;
+}
+
 .question {
     display: grid;
     grid-template-columns: 1fr 5%;
@@ -173,6 +181,10 @@ h1 {
 }
 
 @media (max-width: 800px) {
+    .wraper {
+        max-width: 300px;
+    }
+
    .card {
     padding: 10em 2em 5em;
    }
@@ -187,14 +199,14 @@ h1 {
     .card { 
         display: grid;
         grid-template-columns: 1fr 1fr;
-        max-width: 1200px;
 
         overflow: hidden;
     }
 
     .wraper {
         position: relative;
-        margin: 0 5em;
+        /* margin: 0 5em; */
+        max-width: 1200px;
     }
 
     .image_mobile {
@@ -228,6 +240,19 @@ h1 {
         transform: translate(-40%, -20%);
     }
 
+}
 
+.selected .question__text {
+    display: block;
+}
+
+.selected .question__title {
+    color: black;
+    margin-bottom: 1em;
+    font-weight: var(--fw-bold);
+}
+
+.selected .arrow svg {
+    transform: rotate(180deg);
 }
 
